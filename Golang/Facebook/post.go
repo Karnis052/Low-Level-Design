@@ -39,10 +39,10 @@ func (p *Post) AddLike(userID string) bool {
 	return false
 }
 
-func (p *Post) AddComment(comment Comment) {
+func (p *Post) AddComment(comment *Comment) {
 	p.mu.Lock()
 	defer p.mu.Unlock()
-	p.comments = append(p.comments, &comment)
+	p.comments = append(p.comments, comment)
 
 }
 
